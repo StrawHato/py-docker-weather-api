@@ -13,12 +13,13 @@ FILTERING = "Paris"
 
 def get_weather() -> None:
     result = requests.get(URL, params={"key": API_KEY, "q": FILTERING})
+    dict_result = result.json()
     print("Performing request to Weather API for city Paris...")
     print(
-        f"{result.json()["location"]["name"]}/"
-        f"{result.json()["location"]["country"]} "
-        f"{result.json()["location"]["localtime"]}"
-        f" Weather {result.json()["current"]["temp_c"]} "
+        f"{dict_result["location"]["name"]}/"
+        f"{dict_result["location"]["country"]} "
+        f"{dict_result["location"]["localtime"]}"
+        f" Weather {dict_result["current"]["temp_c"]} "
         f"Celsius"
     )
 

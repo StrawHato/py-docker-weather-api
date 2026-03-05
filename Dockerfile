@@ -1,7 +1,7 @@
 FROM python:3.12.13-alpine3.23
 LABEL maintainer="strawhato"
 
-ENV PYTHOUNBUFFERED=1
+ENV PYTHONUNBUFFERED=1
 
 WORKDIR app/
 
